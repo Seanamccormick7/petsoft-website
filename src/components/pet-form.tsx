@@ -43,9 +43,11 @@ export default function PetForm({
   return (
     <form
       action={async () => {
+        //trigger is used by useForm to check validation for all fields
         const result = await trigger();
         if (!result) return;
 
+        //
         onFormSubmission();
 
         const petData = getValues();
